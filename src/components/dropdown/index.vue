@@ -39,33 +39,52 @@ export default {
     RightPos: {
       type: Boolean,
       default: false
+    },
+    choosedItem: {
+      type: Array,
+      default: []
     }
   },
+  // watch: {
+  //   choosedItem: {
+  //     handler(cruVal,oldVal){
+  //       this.value = cruVal
+  //     },
+  //     deep:true
+  //   }
+  // },
+  // computed: {
+  //   value: {
+  //     get: function() {
+  //       return this.choosedItem;
+  //     },
+  //     set: function(newVal) {
+  //       this.choosedItem = newVal;
+  //     }
+  //   }
+  // },
+  
   data() {
     return {
       value: [],
       isShowThisList: false
     };
   },
-  watch:{
-      value(cruVal, oldVal){
-        this.$emit("ChoosedChange",this.value);
-      }
+  watch: {
+    value(cruVal, oldVal) {
+      this.$emit("ChoosedChange", this.value);
+    }
   },
   methods: {
-    onClickoutside(e) {
-      this.isShowThisList = false;
-    },
     showThisList(e) {
       this.isShowThisList = !this.isShowThisList;
-        this.$emit("childEvent");
-      
+
       return false;
     },
     handleBodyClick(e) {
       const notOutside = this.$el.contains(event.target);
       if (!notOutside) {
-          // hide this dropdown
+        // hide this dropdown
         this.isShowThisList = false;
       }
     }
@@ -88,7 +107,7 @@ export default {
 #dropdown {
   position: relative;
   display: inline-block;
-  margin:0 20px;
+  margin: 0 20px;
 }
 .iconfont {
   position: relative;

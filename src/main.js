@@ -3,11 +3,12 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
-import axios from 'axios';
 import ImgNav from "@/components/imgNav/index";
 import AppHeader from "@/components/header/index";
-
-Vue.prototype.$axios = axios
+import * as filters from './filters'
+Object.keys(filters).forEach((key)=>{
+Vue.filter(key,filters[key])
+})
 
 Vue.component(AppHeader.name, AppHeader);
 Vue.component("ImgNav", ImgNav);

@@ -10,16 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {
-      '/api': {
-        target: 'http://www.lessaber.com:443/',//设置你调用的接口域名和端口号 别忘了加http
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': '/'
-                //这里理解成用‘/api’代替target里面的地址，
-        }
-      }
-    },
+    // proxyTable: {
+    //   '/api': {
+    //     target: 'http://www.lessaber.com:443/',//设置你调用的接口域名和端口号 别忘了加http
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/api': '/'
+    //             //这里理解成用‘/api’代替target里面的地址，
+    //     }
+    //   }
+    //},
 
     // Various Dev Server settings
     //host: 'test.lessaber.com',
